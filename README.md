@@ -1,1 +1,1 @@
-**GemLang** is a C implementation of **Gem** language.
+**GemLang** is an implementation of **Gem** language.
