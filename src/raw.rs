@@ -1,9 +1,3 @@
-
-pub enum Raw<T> {
-    None,
-    Some(*T)
-}
-
 #[derive(Copy, Clone, Debug, Eq, PartialEq)]
 pub enum MutRaw<T> {
     None,
