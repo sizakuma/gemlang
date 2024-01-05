@@ -5,3 +5,15 @@ version = 3
 [[package]]
 name = "gemlang"
 version = "0.1.0"
+dependencies = [
+ "glg",
+ "raw",
+]
+
+[[package]]
+name = "glg"
+version = "0.1.0"
+
+[[package]]
+name = "raw"
+version = "0.1.0"

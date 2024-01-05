@@ -38,4 +38,27 @@ macro_rules! raw {
     }
 }
 
-pub(crate) use raw;
+#[cfg(test)]
+mod tests {
+    use super::*;
+
+    pub struct Test {
+        x: i64,
+        y: i32,
+    }
+
+    #[test]
+    fn it_works() {
+        fn testf(raw: MutRaw<Test>) {
+            let r = raw.unwrap();
+            assert_eq!(r.x, 10);
+            assert_eq!(r.y, 12);
+            r.x = 16;
+        }
+
+        let mut test = Test { x: 10, y: 12 };
+        let raw = raw!(&mut test);
+        testf(raw);
+        assert_eq!(test.x, 16);
+    }
+}

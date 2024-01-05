@@ -1,21 +1,20 @@
-macro_rules! lexer {
-    (
-        $lexer_name:ident -> $token_name:ident {
-            $tokenkind_name:ident { $($name:ident{ $($argv:ident, )* },)* },
-            $(rule $regex:tt => $body:stmt, )+
-        }
-    ) => {
-
-    };
-}
+use glg::lexer;
 
 lexer!{
-    Lexer -> Token {
-        TokenKind {
-            Name{ String, },
-            NewLine{},
+    pub kind TokenKind {
+        Name { String },
+        Newline,
+        Whitespace
+    },
+    pub token Token {
+        kind: TokenKind,
+        pos: TokenPos,
+    },
+    pub lexer Lexer -> Token {
+        rule(n = r#"[a-zA-Z_][a-zA-Z_0-9]*"#) => { TokenKind::Name(n.to_string) }
 
-        },
-        rule r#"[a-zA-Z]+"# => { TokenKind::Name(text.to_string()) },
+        each(kind, pos) -> Token {
+            kind
+        }
     }
 }
