@@ -9,7 +9,7 @@ from "math" import { max } as math
 def Entity
 var Entity:name -> String
 
-var Entity:health -> i64
+var Entity:health -> Int
 set Entity:health(self, new) { self:health = math:max(new, 0) }
 signal set Entity:health {
 	if self:health <= 0 {
