@@ -3,5 +3,5 @@
 
 # About
 
-**Gem** is a scripting compiled programming language that allows for both Just-In-Time and Ahead-Of-Time compilation. Gem offers the best of both worlds, like: safe and customizable runtime, small execution times, dirrect memory access (unsafe, if needed), etc.
+**Gem** is a scripting Just-In-Time compiled programming language. Gem offers the best of both worlds, like: safe and customizable runtime, small execution times, dirrect memory access (unsafe, if needed), etc.
 
